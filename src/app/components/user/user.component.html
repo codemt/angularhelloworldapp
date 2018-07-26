@@ -1,0 +1,40 @@
+<h1> Hello Angular for {{name}} </h1>
+  <p> His age is {{age}} </p>
+
+  <h3> His Address is {{address.street}},{{address.city}},{{address.state}}</h3>
+
+  <h4>  Hobbies </h4>
+  <form (submit)="addHobby(hobby.value)">
+      <div>
+            <label for="hobby"> Hobby: </label>
+              <input type="text" #hobby>
+      </div>
+  </form>
+
+<ul>
+	<li *ngFor="let hobby of hobbies; let i=index "> 
+    {{i+1}} : {{hobby}} <button (click)="deleteHobby(hobby)"> X </button>
+  </li>
+</ul>
+
+<button (click)="onClick()"> Click Me </button>
+
+<h2> Edit User</h2>
+<form>
+ <div>
+     <label for="email"> Name : </label> <br>
+     <input type="text" [(ngModel)]="name" name="name" />
+ </div>
+ <div>
+     <label for="age"> Age : </label> <br>
+     <input type="number" [(ngModel)]="age" name="age" />
+ </div>
+ <div>
+     <label for="email"> Email : </label> <br>
+     <input type="text" [(ngModel)]="email" name="email" />
+ </div>
+ <div>
+     <label for="address"> Address : </label>  <br>
+     <input type="text" [(ngModel)]="address.street" name="address" />
+ </div>
+</form> 
